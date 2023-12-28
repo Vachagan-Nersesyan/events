@@ -1,38 +1,141 @@
-.evevnts_plc_rst_in_content_1 {
-    margin: 1em;
-    background-image: url(../images/bg.png);
-    padding: 1em;
-    border-radius: .5em;
+.current_restaurant_content {
+    width: 100%;
 }
 
-.evevnts_plc_rst_in_content_1_1 {
+.current_restaurant_content_container {
+    background-image: url(../images/3.png);
+    background-size: cover;
+}
+
+.current_restaurant_content_1 {
+    width: 100%;
+    height: 33em;
+    margin-bottom: 2em;
+    background-image: url(../images/1.png);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.current_restaurant_content_1_overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+}
+
+.current_restaurant_content_1_1 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.current_restaurant_content_1_1_1 {
+    font-family: 'Roboto Mono', monospace;
+    color: #bcdafb;
+    font-size: 3em;
+    margin-bottom: .1em;
+}
+
+.current_restaurant_content_1_container {
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    width: 60%;
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.current_restaurant_content_1_1_2 {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    font-size: 3em;
+    margin-bottom: .1em;
+}
+
+.current_restaurant_content_1_1_3 {
+    border-bottom: 1px solid white;
+    margin-bottom: .5em;
+}
+
+.current_restaurant_content_1_1_3_subtitle {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
     margin-bottom: 1em;
 }
 
-.evevnts_plc_rst_in_content_1_1 a {
-    color: red;
-    text-decoration: none;
+.current_restaurant_content_1_1_4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.current_restaurant_content_1_1_4_1_1 {
     font-family: 'Roboto Mono', monospace;
-    transition: .3s ease-in-out;
+    color: #fef32a;
+    margin-top: .5em;
+    font-weight: 700;
 }
 
-.evevnts_plc_rst_in_content_1_1 a:hover {
-    color: black;
+.current_restaurant_content_1_1_4_1_2 {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
 }
 
-.evevnts_plc_rst_in_content_1_2 {
+.current_restaurant_content_1_2 {
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.evevnts_plc_rst_in_content_1_2 img {
-    width: 60%;
+.current_restaurant_content_1_2 img {
+    width: 100%;
 }
 
-.evevnts_plc_rst_in_content_2 {
+.current_restaurant_sec_content {
+    padding: 3em 0;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.current_restaurant_sec_content_1 {
     font-family: 'Roboto Mono', monospace;
-    padding-left: 1em;
+    margin-bottom: 1em;
+    font-weight: 100;
+}
+
+.current_restaurant_sec_content_1 span {
+    margin-right: 4em;
     font-weight: 700;
+}
+
+.current_restaurant_sec_content_2 {
+
+    font-family: 'Roboto Mono', monospace;
+    margin-right: 4em;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.current_restaurant_sec_content_3 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.current_restaurant_sec_content_3 button {
+    padding: 1em;
+    font-family: 'Roboto Mono', monospace;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: .3s ease-in-out;
+    color: black;
+}
+
+.current_restaurant_sec_content_3 button:hover {
+    background-color: black;
+    color: white;
 }

@@ -11,23 +11,8 @@ const PlaceComp: React.FC<OwnProps> = () => {
     const restaurantItemsArr = [
         {
             id: 0,
-            title: 'Tashi Pizza',
-            picture: '/images/restaurantPic/3.png'
-        },
-        {
-            id: 1,
-            title: 'KFC',
+            title: 'Կովկաս',
             picture: '/images/restaurantPic/1.png'
-        },
-        {
-            id: 2,
-            title: 'Mr. Gyros',
-            picture: '/images/restaurantPic/2.png'
-        },
-        {
-            id: 3,
-            title: 'Pizza Hut',
-            picture: '/images/restaurantPic/4.png'
         },
     ]
 
@@ -137,7 +122,7 @@ const PlaceComp: React.FC<OwnProps> = () => {
                                 <div className={styles.evevnts_plc_rst_in_content}>
                                     <div className={styles.evevnts_plc_rst_in_content_1}>
                                         <div className={styles.evevnts_plc_rst_in_content_1_1}>
-                                            <NavLink to={`/restaurant/${val.title}`}>Պատվիրել սնունդ</NavLink>
+                                            <NavLink to={`/restaurant/${val.title}`}>Ավելին</NavLink>
                                         </div>
                                         <div className={styles.evevnts_plc_rst_in_content_1_2}>
                                             <img src={val.picture} />
