@@ -1,0 +1,154 @@
+.home_content {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.home_content_container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.home_content_1_ovrl {
+    background-image: url('../images/bg.jpg');
+    z-index: -2;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 3em;
+    position: relative;
+
+}
+
+.home_content_1 {
+    height: 100vh;
+    background-image: url('../images/1.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+}
+
+.home_content_1_pic {
+    width: 100%;
+
+}
+
+.home_content_1_pics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30em;
+    position: relative;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home_content_1_pics img {
+    width: 100%;
+    position: absolute;
+}
+
+.home_content_1_pics_title {
+    position: absolute;
+    top: 3em;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    font-size: 5em;
+    font-weight: 800;
+}
+
+.home_content_1_1_ovrls {
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+}
+
+.home_content_1_1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: white;
+}
+
+.home_content_1_1 span {
+    color: #ff735c;
+}
+
+.home_content_container {
+    margin-bottom: 2em;
+}
+
+.home_content_2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home_content_2_1 {
+    width: 30%;
+    height: 17em;
+    margin: 2em;
+    position: relative;
+    border-radius: .5em;
+    overflow: hidden;
+}
+
+.home_content_2_1_ovrl {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    z-index: 1;
+}
+
+.home_content_2_1_1 {
+    z-index: 0;
+    position: absolute;
+}
+
+.home_content_2_1_1 img {
+    width: 100%;
+}
+
+.home_content_2_1_2 {
+    z-index: 2;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.home_content_2_1_3 {
+    z-index: 2;
+    position: absolute;
+    bottom: 3em;
+    left: 2em;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    font-size: .9em;
+}
+
+.home_content_2_1_3 ul li {
+    margin-bottom: .5em;
+}
+
+.home_content_2_1_2_1 {
+    width: 10%;
+    margin-right: .5em;
+}
+
+.home_content_2_1_2_1 img {
+    width: 100%;
+}
+
+.home_content_2_1_2_2 {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    font-size: 1.1em;
+}

@@ -1,0 +1,38 @@
+.evevnts_plc_rst_in_content_1 {
+    margin: 1em;
+    background-image: url(../images/bg.png);
+    padding: 1em;
+    border-radius: .5em;
+}
+
+.evevnts_plc_rst_in_content_1_1 {
+    margin-bottom: 1em;
+}
+
+.evevnts_plc_rst_in_content_1_1 a {
+    color: red;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    transition: .3s ease-in-out;
+}
+
+.evevnts_plc_rst_in_content_1_1 a:hover {
+    color: black;
+}
+
+.evevnts_plc_rst_in_content_1_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.evevnts_plc_rst_in_content_1_2 img {
+    width: 60%;
+}
+
+.evevnts_plc_rst_in_content_2 {
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 1em;
+    font-weight: 700;
+}

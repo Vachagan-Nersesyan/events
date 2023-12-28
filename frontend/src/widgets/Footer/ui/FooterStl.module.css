@@ -1,0 +1,115 @@
+.footer_content {
+    width: 100%;
+    height: 100%;
+    background-color: #222223;
+}
+
+.footer_content_container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.footer_content_footer {
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.f_c_t_item_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.f_c_t_item_1_1 {
+    margin-right: .5em;
+    width: 10%;
+}
+
+
+.f_c_t_item_1_1 img {
+    width: 100%;
+}
+
+.f_c_t_item_1_2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: white;
+}
+
+.f_c_t_item_2_1 {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    text-align: center;
+    font-size: .9em;
+}
+
+
+
+.f_c_t_item_1_1 a img {
+    width: 50%;
+}
+
+.footer_content_footer_col {
+    padding: 0 1em;
+}
+
+.footer_content_footer_col_2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.footer_content_footer_col_2 a {
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+.footer_content_footer_col_title,
+.footer_content_footer_col_2_2 {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    margin-bottom: .5em;
+}
+
+.footer_content_footer_col_3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.footer_content_footer_col_3_1_w23 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.footer_content_footer_col_3_1_w23 span {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+.footer_content_footer_border {
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.footer_content_footer_lst {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer_content_footer_lst span {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}

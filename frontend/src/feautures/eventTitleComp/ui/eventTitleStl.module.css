@@ -1,0 +1,16 @@
+.events_item_content_overlay {
+    padding: 5em 1em 1em 1em;
+
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 1;
+    position: relative;
+
+}
+
+.events_item_content_titleitm {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: white;
+    margin: 0 auto;
+    width: 80%;
+}

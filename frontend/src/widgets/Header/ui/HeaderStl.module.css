@@ -1,0 +1,161 @@
+.header_contet {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    z-index: 10000;
+}
+
+.header_context_container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 0;
+}
+
+.header_context_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_context_1_1 {
+    margin-right: .5em;
+    width: 2em;
+
+}
+
+.header_context_1_1 img {
+    width: 100%;
+}
+
+.header_context_1_2 {
+    font-size: 1.7em;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    color: white;
+}
+
+.header_context_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_context_2_1 {
+    padding: 0 1em;
+}
+
+.header_context_2_1 a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    transition: .3s ease-in-out;
+}
+
+.header_context_2_1 a:hover {
+    color: #bfbcf1;
+
+}
+
+.header_context_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_context_3_1 {
+    margin-right: 2em;
+}
+
+.header_context_3_1 button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.header_context_3_2 {
+    margin-right: 2em;
+}
+
+
+
+.slct_opt_img img {
+    width: 2em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.switch input:checked+.slider {
+    background-color: #0a0935;
+    color: white;
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.dropdown {
+    position: absolute !important;
+    background-color: rgba(10, 9, 53, .6);
+    padding: 1em;
+}
+
+.selected_option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_context_3_3 {
+    margin-right: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_context_3_3 svg {
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
