@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
+import homeSlice from 'entities/homeR/homeReducer'
+import weddingSlice from 'entities/weddingR/weddingReducer'
 import { useDispatch } from 'react-redux'
 
 
 const store = configureStore({
     reducer: {
+        homeR: homeSlice,
+        weddingR: weddingSlice
     }
 })
 

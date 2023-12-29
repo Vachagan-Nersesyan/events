@@ -48,7 +48,7 @@ const Header: React.FC<OwnProps> = () => {
                 </div>
                 <div className={styles.header_context_2}>
                     <div className={styles.header_context_2_1}>
-                        <NavLink to={'/main-page'}>Գլխավոր</NavLink>
+                        <NavLink to={'/'}>Գլխավոր</NavLink>
                     </div>
 
                     <div className={styles.header_context_2_1}>

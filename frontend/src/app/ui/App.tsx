@@ -4,13 +4,13 @@ import { OwnProps } from './AppTs.interface';
 import Header from 'widgets/Header';
 import Footer from 'widgets/Footer';
 import { Route, Routes } from 'react-router-dom';
-import EventsComp from 'pages/events';
-import EventsPlaceComp from 'pages/place'
-import RestaurantComp from 'pages/restaurants'
-
 
 
 const HomeComp = lazy(() => import("pages/home"))
+const EventsComp = lazy(() => import("pages/events"))
+const EventsPlaceComp = lazy(() => import("pages/place"))
+const RestaurantComp = lazy(() => import("pages/restaurants"))
+
 
 
 const App: React.FC<OwnProps> = () => {
@@ -20,7 +20,7 @@ const App: React.FC<OwnProps> = () => {
       <Routes>
         <Route path='/' element={<HomeComp />} />
         <Route path='/events/:id' element={<EventsComp />} />
-        <Route path='/events/place/:id' element={<EventsPlaceComp />} />
+        <Route path='/events/place/:id' element={<EventsComp />} />
         <Route path='/restaurant/:id' element={<RestaurantComp />} />
 
       </Routes>

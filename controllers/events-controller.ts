@@ -1,19 +1,19 @@
-// import { Request, Response } from "express"
+import { Request, Response } from "express"
 
-// import CarItem from '../models/carModel'
+import EventItem from '../models/events'
 // import RentCarItem from "../models/addCar"
 
 
-// export const getCars = (req: Request, res: Response) => {
-//     CarItem
-//         .find()
-//         .then((cars) => {
-//             res.send(cars)
-//         })
-//         .catch((error) => {
-//             console.log(error)
-//         })
-// }
+export const getEvents = (req: Request, res: Response) => {
+    EventItem
+        .find()
+        .then((events) => {
+            res.send(events)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+}
 
 // export const getCurrentCar = (req: Request, res: Response) => {
 

@@ -1,10 +1,11 @@
-// import express from "express"
-// import { contactSend } from "../controllers/contact-controller"
+import express from "express"
 
-// import { body } from "express-validator"
+import { body } from "express-validator"
+import { getRestaurants } from "../controllers/restaurants-controller"
 
-// const router = express.Router()
+const router = express.Router()
 
+router.get('/get-restaurants', getRestaurants)
 
 
 // router.post(
@@ -17,4 +18,4 @@
 //     contactSend
 // )
 
-// export default router
+export default router

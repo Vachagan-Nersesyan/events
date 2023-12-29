@@ -4,8 +4,8 @@ import path from "path"
 import mongoose from "mongoose"
 
 
-// import carRoutes from './routes/car-routes'
-// import contactRouter from './routes/contact-routes'
+import eventsRouter from './routes/events-routes'
+import restaurantsRouter from './routes/restaurant-routes'
 
 const app = express()
 
@@ -26,8 +26,8 @@ app.use(express.static('./frontend/build'))
 
 
 
-// app.use(carRoutes)
-// app.use(contactRouter)
+app.use(eventsRouter)
+app.use(restaurantsRouter)
 
 
 

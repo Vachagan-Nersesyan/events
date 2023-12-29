@@ -1,4 +1,5 @@
-// import { Request, Response } from "express"
+import { Request, Response } from "express"
+import RestaurantItem from "../models/restaurant"
 
 // import MessagesItem from '../models/contact'
 
@@ -15,3 +16,15 @@
 //         })
 
 // }
+
+
+export const getRestaurants = (req: Request, res: Response) => {
+    RestaurantItem
+        .find()
+        .then((restaurant) => {
+            res.send(restaurant)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+}
