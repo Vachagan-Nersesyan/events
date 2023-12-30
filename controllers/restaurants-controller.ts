@@ -1,21 +1,21 @@
 import { Request, Response } from "express"
 import RestaurantItem from "../models/restaurant"
+import SendInfoItem from "../models/infoModel"
 
-// import MessagesItem from '../models/contact'
 
 
-// export const contactSend = (req: Request, res: Response) => {
+export const infoSend = (req: Request, res: Response) => {
 
-//     const carItem = new MessagesItem({ ...req.body.info })
+    const infoItem = new SendInfoItem({ ...req.body.info })
 
-//     carItem
-//         .save()
-//         .then((data) => res.redirect('/message-send'))
-//         .catch((error) => {
-//             res.redirect('/')
-//         })
+    infoItem
+        .save()
+        .then((data) => res.redirect('/message-send'))
+        .catch((error) => {
+            res.redirect('/')
+        })
 
-// }
+}
 
 
 export const getRestaurants = (req: Request, res: Response) => {

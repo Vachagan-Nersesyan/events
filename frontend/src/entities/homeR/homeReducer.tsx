@@ -8,6 +8,7 @@ import { getAllEvents } from './homeReducerThunk'
 const initialState: InitialStateType = {
     loading: true,
     error: null,
+    language: 'arm',
 
     events: [],
 
@@ -79,11 +80,13 @@ const initialState: InitialStateType = {
 }
 
 export const homeSlice = createSlice({
-    name: 'cars',
+    name: 'home',
     initialState,
     reducers: {
-        // rentCarInfoFunc(state: InitialStateType, action: PayloadAction<{ info: SearchCarInfoType }>) {
-        // },
+        changeLangTypeFunc(state: InitialStateType, action: PayloadAction<string>) {
+            state.language = action.payload
+
+        },
     },
     extraReducers:
         (builder) => {
@@ -104,7 +107,7 @@ export const homeSlice = createSlice({
 })
 
 
-export const { } = homeSlice.actions
+export const { changeLangTypeFunc} = homeSlice.actions
 
 
 export default homeSlice.reducer

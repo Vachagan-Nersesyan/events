@@ -4,6 +4,7 @@ import App from './app';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import store from './entities/store/redux-store';
+import { LanguageProvider } from 'widgets/setLanguage/langContent';
 
 
 
@@ -15,7 +16,9 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <Suspense fallback={<div className='loader_comp_content'>Loading...</div>}>
-          <App />
+          <LanguageProvider>
+            <App />
+          </LanguageProvider>
         </Suspense>
       </Provider>
     </BrowserRouter>

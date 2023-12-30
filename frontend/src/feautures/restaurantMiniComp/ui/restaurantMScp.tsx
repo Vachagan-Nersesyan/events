@@ -6,9 +6,10 @@ import { AppStateType, useAppDispatch } from 'entities/store/redux-store'
 import { getAllRestaurants } from 'entities/weddingR/weddingReducerThunk'
 import { RestuarantsPicArr } from 'entities/weddingR/weddingReducerTs.interface'
 import { useSelector } from 'react-redux'
+import { searchRestaurantFunc } from 'widgets/helpers/helpersTs'
 
 
-const RestaurantMiniComp: React.FC<OwnProps> = () => {
+const RestaurantMiniComp: React.FC<OwnProps> = ({  }) => {
 
     // const restaurantItemsArr = [
     //     {
@@ -31,6 +32,11 @@ const RestaurantMiniComp: React.FC<OwnProps> = () => {
     useEffect(() => {
         aDispatch(getAllRestaurants())
     }, [])
+
+
+    const searchRestCompFunc = (str: string) => {
+        setRestaurantArr(searchRestaurantFunc(str, restArr))
+    }
 
 
     return (
@@ -71,17 +77,9 @@ const RestaurantMiniComp: React.FC<OwnProps> = () => {
                             </div>
                             <div className={styles.events_place_content_2_1_slct}>
                                 <select id="mySelect">
-                                    <option value="Audi">Audi</option>
-                                    <option value="BMW">BMW</option>
-                                    <option value="Mercedes">Mercedes</option>
-                                    <option value="Volvo">Volvo</option>
                                 </select>
 
                                 <select id="mySelectSec">
-                                    <option value="Audi">Audi</option>
-                                    <option value="BMW">BMW</option>
-                                    <option value="Mercedes">Mercedes</option>
-                                    <option value="Volvo">Volvo</option>
                                 </select>
                             </div>
                         </div>
@@ -91,10 +89,14 @@ const RestaurantMiniComp: React.FC<OwnProps> = () => {
                             </div>
                             <div className={styles.events_place_content_2_1_slct}>
                                 <select id="mySelect">
-                                    <option value="Audi">Audi</option>
-                                    <option value="BMW">BMW</option>
-                                    <option value="Mercedes">Mercedes</option>
-                                    <option value="Volvo">Volvo</option>
+                                    {
+                                        restaurantArr.map((val) => {
+                                            return (
+                                                <option value={`${val.name}`}>{val.name}</option>
+
+                                            )
+                                        })
+                                    }
                                 </select>
                             </div>
                         </div>
@@ -121,7 +123,7 @@ const RestaurantMiniComp: React.FC<OwnProps> = () => {
                                 </div>
                             </div>
                             <div className={styles.events_place_content_3_lst_1_inp_srch}>
-                                <input type="text" placeholder='Որոնել' />
+                                <input type="text" placeholder='Որոնել' onChange={(e) => searchRestCompFunc(e.target.value)} />
                             </div>
                         </div>
                     </div>
@@ -152,8 +154,11 @@ const RestaurantMiniComp: React.FC<OwnProps> = () => {
                         })
                     }
                 </div>
+                <NavLink to={'/events/place/Հյուրերի քանակ'} >
+                    Հաջորդը
+                </NavLink>
             </div>
-        </div>
+        </div >
     )
 }
 

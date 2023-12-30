@@ -2,7 +2,8 @@ export interface InitialStateType {
     loading: boolean,
     error: string | null,
     events: Array<EventType>,
-    eventsPic: Array<EventsPicType>
+    eventsPic: Array<EventsPicType>,
+    language: string
 }
 
 export interface EventType {

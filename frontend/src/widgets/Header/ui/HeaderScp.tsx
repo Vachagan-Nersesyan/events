@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import styles from './HeaderStl.module.css'
 import { OwnProps } from './HeaderTs.interface'
 
@@ -9,13 +9,23 @@ import { FaRegCircleUser, FaSistrix } from "react-icons/fa6";
 import fflag from '../images/1f.png'
 import sflag from '../images/2f.png'
 import tflag from '../images/3f.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppStateType } from 'entities/store/redux-store'
+import { changeLangTypeFunc } from 'entities/homeR/homeReducer'
+import { logOutFunc } from 'entities/loginR/loginReducer'
 
 
 
 const Header: React.FC<OwnProps> = () => {
 
+    const dispatch = useDispatch()
 
-    const [selectedOption, setSelectedOption] = useState<string | undefined>('option1');
+    const lang = useSelector((state: AppStateType) => state.homeR.language)
+
+    const texts = require(`../../../widgets/setLanguage/languageLib/${lang}.json`);
+
+
+    const [selectedOption, setSelectedOption] = useState<string | undefined>('arm');
     const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
     const toggleDropdown = () => {
@@ -28,12 +38,19 @@ const Header: React.FC<OwnProps> = () => {
     };
 
     const options = [
-        { value: 'option1', label: 'Option 1', image: fflag },
-        { value: 'option2', label: 'Option 2', image: sflag },
-        { value: 'option3', label: 'Option 3', image: tflag },
+        { value: 'arm', label: 'Option 1', image: fflag },
+        { value: 'rus', label: 'Option 2', image: sflag },
+        { value: 'eng', label: 'Option 3', image: tflag },
 
     ];
 
+    const handleSelectLangChange = (str: string) => {
+        dispatch(changeLangTypeFunc(str))
+    };
+
+    const logOutFuncComp = () => {
+        dispatch(logOutFunc())
+    }
 
     return (
         <div className={styles.header_contet}>
@@ -56,7 +73,7 @@ const Header: React.FC<OwnProps> = () => {
                     </div>
 
                     <div className={styles.header_context_2_1}>
-                        <NavLink to={'/contact-page'}>Կապ</NavLink>
+                        <NavLink to={'/contact-page'}>{texts.headerT}</NavLink>
                     </div>
                 </div>
                 <div className={styles.header_context_3}>
@@ -75,7 +92,11 @@ const Header: React.FC<OwnProps> = () => {
                                 {isDropdownOpen && (
                                     <div className={styles.dropdown}>
                                         {options.map((option) => (
-                                            <div key={option.value} onClick={() => selectOption(option.value)}>
+                                            <div key={option.value} onClick={() => {
+                                                selectOption(option.value)
+                                                handleSelectLangChange(option.value)
+                                            }
+                                            }>
                                                 <img src={option.image} alt={`${option.label} Image`} style={{ width: '2em' }} />
                                             </div>
                                         ))}
@@ -94,6 +115,7 @@ const Header: React.FC<OwnProps> = () => {
                             <span className={styles.slider}></span>
                         </label>
                     </div>
+                    <button onClick={logOutFuncComp}>Logout</button>
 
                 </div>
             </div>

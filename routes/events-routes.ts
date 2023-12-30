@@ -4,7 +4,6 @@ const router = express.Router()
 
 router.get('/get-events', getEvents)
 
-// router.get('/car/:id', getCurrentCar)
 
 // router.post('/car-rent', rentCar)
 

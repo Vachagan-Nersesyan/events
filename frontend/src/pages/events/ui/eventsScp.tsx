@@ -3,7 +3,7 @@ import styles from './eventsStl.module.css'
 import { EventsMakeArrType, OwnProps } from './eventsTs.interface'
 
 import pic from '../images/1.png'
-import { NavLink, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { NavLink, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom'
 import EventTitle from 'feautures/eventTitleComp'
 import { useSelector } from 'react-redux'
 import { AppStateType } from 'entities/store/redux-store'
@@ -14,11 +14,25 @@ import PlaceComp from 'pages/place'
 
 const EventsComp: React.FC<OwnProps> = () => {
 
+    const navigate = useNavigate();
+
+    const isAuth = useSelector((state: AppStateType) => state.loginR.isAuth)
+    const [authHk, setAuthHk] = useState<boolean>(isAuth)
+
+
+    useEffect(() => {
+        setAuthHk(isAuth)
+    }, [isAuth])
+
+    if (!authHk) {
+        navigate('/login')
+    }
+
     const history = useLocation();
     const params = useParams()
 
     const [isChaneItemPath, setIsChaneItemPath] = useState<boolean>(false)
-    const [firstPath, setFirstPath] = useState<string | undefined>('')
+    const [firstPath, setFirstPath] = useState<string | undefined>(params.id)
 
 
     const eventsArr = useSelector((state: AppStateType) => state.homeR.events)
@@ -38,25 +52,33 @@ const EventsComp: React.FC<OwnProps> = () => {
     console.log(eventsArr, firstPath, 'eventsArr')
 
     useEffect(() => {
-        debugger
-        
-        if (!isChaneItemPath) { setFirstPath(params.id) }
+
         setIsChaneItemPath(true)
 
-        let item = eventsArr.filter((val) => val.name === firstPath)
-        setCurrentItemEvents(item)
+        if (!isChaneItemPath) {
+            let item = eventsArr.filter((val) => val.name === firstPath)
+            setCurrentItemEvents(item)
+        }
+
     }, [])
 
     useEffect(() => {
-        let item = eventsArr.filter((val) => val.name === firstPath)
-        setCurrentItemEvents(item)
+        if (!isChaneItemPath) {
+
+            let item = eventsArr.filter((val) => val.name === firstPath)
+            setCurrentItemEvents(item)
+        }
     }, [history.pathname])
 
     useEffect(() => {
-        console.log(firstPath,'firstPathfirstPath')
-        let item = eventsArr.filter((val) => val.name === firstPath)
-        setCurrentItemEvents(item)
-        setIsLoading(load)
+        if (!isChaneItemPath) {
+
+            console.log(firstPath, 'firstPathfirstPath')
+            let item = eventsArr.filter((val) => val.name === firstPath)
+            console.log(item, firstPath, 'item,firstPath')
+            setCurrentItemEvents(item)
+            setIsLoading(load)
+        }
     }, [load])
 
     console.log(currentItemEvents, history, 'currentItemEvents')

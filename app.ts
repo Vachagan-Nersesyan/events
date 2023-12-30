@@ -1,11 +1,18 @@
 import express, { Request, Response } from "express"
 import path from "path"
-
+import session from 'express-session'
 import mongoose from "mongoose"
+import passport from "passport"
+import passportLocal from "passport-local"
+import bcrypt from 'bcrypt'
 
 
 import eventsRouter from './routes/events-routes'
 import restaurantsRouter from './routes/restaurant-routes'
+import loginRouter from './routes/login-routes'
+import { SessionType } from "./appTs.interface"
+import LoginItem from "./models/login"
+
 
 const app = express()
 
@@ -22,14 +29,32 @@ app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }))
 
+
 app.use(express.static('./frontend/build'))
 
+app.use(session({
+    secret: process.env.SESSION_CODE,
+    resave: false,
+    saveUninitialized: false
+} as SessionType))
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+// passport.use(new passportLocal.Strategy({
+//     usernameField: "email"
+
+// }, async (email: string, password: string, done: any) => {
+//     console.log('ttttttttt')
+    
+
+// }))
 
 
 app.use(eventsRouter)
 app.use(restaurantsRouter)
-
-
+app.use(loginRouter)
 
 
 app.get('*', (req, res) => {
@@ -44,3 +69,5 @@ app.use((req: Request, res: Response) => {
 
 
 app.listen(process.env.PORT || 3000)
+
+

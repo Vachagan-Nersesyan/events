@@ -12,6 +12,8 @@ const initialState: InitialStateType = {
     restaurantsArr: [],
 
     rentedRest: null,
+    guestsCount: '0',
+    danceRent: false
 }
 
 export const weddingSlice = createSlice({
@@ -19,9 +21,17 @@ export const weddingSlice = createSlice({
     initialState,
     reducers: {
         rentRestaurantInfoFunc(state: InitialStateType, action: PayloadAction<{ info: string }>) {
-            console.log(action.payload.info)
+            // console.log(action.payload.info)
             let data = state.restaurantsArr.filter((val) => val.name === action.payload.info)
             state.rentedRest = data[0]
+            // console.log(current(state), 'state.rentedReststate.rentedReststate.rentedReststate.rentedReststate.rentedRest')
+        },
+        guestsCountInfoFunc(state: InitialStateType, action: PayloadAction<{ info: string }>) {
+            state.guestsCount = action.payload.info
+            console.log(current(state), 'state.rentedReststate.rentedReststate.rentedReststate.rentedReststate.rentedRest')
+        },
+        danceInfoFunc(state: InitialStateType, action: PayloadAction<{ info: boolean }>) {
+            state.danceRent = action.payload.info
             console.log(current(state), 'state.rentedReststate.rentedReststate.rentedReststate.rentedReststate.rentedRest')
         },
     },
@@ -44,7 +54,7 @@ export const weddingSlice = createSlice({
 })
 
 
-export const { rentRestaurantInfoFunc } = weddingSlice.actions
+export const { rentRestaurantInfoFunc, guestsCountInfoFunc, danceInfoFunc } = weddingSlice.actions
 
 
 export default weddingSlice.reducer

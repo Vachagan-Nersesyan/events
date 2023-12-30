@@ -3,7 +3,9 @@ export interface InitialStateType {
     error: string | null,
 
     restaurantsArr: Array<RestuarantsPicArr>,
-    rentedRest: RestuarantsPicArr | null
+    rentedRest: RestuarantsPicArr | null,
+    guestsCount: string,
+    danceRent: boolean
 }
 
 export interface RestuarantsPicArr {
@@ -17,4 +19,10 @@ export interface RestuarantsPicArrType {
     minPrice: number,
     price: number,
     name: string
+}
+
+export interface SendingInfoType {
+    restaurant: RestuarantsPicArr | null,
+    guests: string,
+    dance: boolean
 }
